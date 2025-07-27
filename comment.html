@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+  Comment form page: allows a moderator to write feedback when rejecting
+  an advertisement.  Submitting the form with content will navigate to
+  the comment success page; submitting with an empty field triggers an
+  alert.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniSkyLink – Leave a Comment</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Branding link returns to the home page -->
+            <a href="index.html" title="Return to the home page">
+                <img src="assets/logo.png" alt="UniSkyLink company logo">
+                <span>UniSkyLink</span>
+            </a>
+        </div>
+        <nav>
+            <a href="login.html" class="btn" title="Log into your account">Login</a>
+            <details>
+                <summary title="Open navigation menu">Menu ☰</summary>
+                <div class="dropdown">
+                    <a href="moderator.html" title="Back to moderator review page">
+                        <img src="assets/moderator-icon.png" alt="Moderator icon">Moderator
+                    </a>
+                    <a href="reports.html" title="View management reports">
+                        <img src="assets/reports-icon.png" alt="Reports icon">Reports
+                    </a>
+                    <a href="contact.html" title="Contact customer support">
+                        <img src="assets/contact-icon.png" alt="Contact icon">Contact
+                    </a>
+                </div>
+            </details>
+        </nav>
+    </header>
+    <main>
+        <section style="text-align:center;padding:30px;">
+            <h2>Leave a Comment</h2>
+            <p>Please provide a reason for rejecting the advertisement.</p>
+        </section>
+        <form onsubmit="return validateComment()" action="comment-success.html" method="post">
+            <label for="comment">Comment</label>
+            <textarea id="comment" name="comment" placeholder="Write your feedback here" title="Enter your comment"></textarea>
+            <input type="submit" value="Submit" title="Submit your comment">
+            <button type="button" onclick="window.location.href='index.html'" title="Return to the home page">Cancel</button>
+        </form>
+    </main>
+    <footer style="text-align:center;padding:20px;background-color:#f5f5f5;margin-top:40px;">
+        <p>&copy; 2025 Nishan Chimariya. All rights reserved.</p>
+    </footer>
+
+    <!--  -->
+    <script src="assets/tooltip.js"></script>
+    <script>
+    function validateComment() {
+        var comment = document.getElementById('comment').value.trim();
+        if (comment === '') {
+            alert('Please enter your comment');
+            return false;
+        }
+        return true;
+    }
+    </script>
+</body>
+</html>

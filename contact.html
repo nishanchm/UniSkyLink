@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+  Contact page: allows users to send a message to the support team.
+  The form requires a name, an email address and a message.  If any
+  field is empty, the submission is prevented and the user is alerted.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniSkyLink – Contact Us</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Branding link returns to the home page -->
+            <a href="index.html" title="Return to the home page">
+                <img src="assets/logo.png" alt="UniSkyLink company logo">
+                <span>UniSkyLink</span>
+            </a>
+        </div>
+        <nav>
+            <a href="login.html" class="btn" title="Log into your account">Login</a>
+            <details>
+                <summary title="Open navigation menu">Menu ☰</summary>
+                <div class="dropdown">
+                    <a href="moderator.html" title="Access the moderator review page">
+                        <img src="assets/moderator-icon.png" alt="Moderator icon">Moderator
+                    </a>
+                    <a href="reports.html" title="View management reports">
+                        <img src="assets/reports-icon.png" alt="Reports icon">Reports
+                    </a>
+                    <a href="contact.html" title="You are on the contact page">
+                        <img src="assets/contact-icon.png" alt="Contact icon">Contact
+                    </a>
+                </div>
+            </details>
+        </nav>
+    </header>
+    <main>
+        <section style="text-align:center;padding:30px;">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you. Please fill out the form below and we'll get back to you soon.</p>
+        </section>
+        <form onsubmit="return validateContact()" action="contact-success.html" method="post">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" title="Enter your full name">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" title="Enter your email address">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message" title="Describe your issue or enquiry"></textarea>
+            <input type="submit" value="Submit" title="Send your message">
+            <button type="button" onclick="window.location.href='index.html'" title="Return to the home page without submitting">Cancel</button>
+        </form>
+    </main>
+    <footer style="text-align:center;padding:20px;background-color:#f5f5f5;margin-top:40px;">
+        <p>&copy; 2025 Nishan Chimariya. All rights reserved.</p>
+    </footer>
+
+    <!-- -->
+    <script src="assets/tooltip.js"></script>
+    <script>
+    function validateContact() {
+        var name = document.getElementById('name').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var message = document.getElementById('message').value.trim();
+        if (name === '' || email === '' || message === '') {
+            alert('Please fill out all fields');
+            return false;
+        }
+        return true;
+    }
+    </script>
+</body>
+</html>

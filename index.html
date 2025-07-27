@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+  This is the home page for the UniSkyLink prototype.
+  It introduces visitors to the service and provides quick links
+  to view flights departing from major Australian cities.  
+  Each section is documented as per assessment requirements.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Make sure the page scales correctly on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniSkyLink – Home</title>
+    <!-- Link to the shared stylesheet, autocreated -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Header with logo and navigation menu -->
+    <header>
+        <div class="logo">
+            <!-- Branding link returns to the home page -->
+            <a href="index.html" title="Return to the home page">
+                <img src="assets/logo.png" alt="UniSkyLink company logo">
+                <span>UniSkyLink</span>
+            </a>
+        </div>
+        <nav>
+            <!-- Login button -->
+            <a href="login.html" class="btn" title="Log into your account">Login</a>
+            <!-- Dropdown navigation implemented with a details element -->
+            <details>
+                <summary title="Open navigation menu">Menu ☰</summary>
+                <div class="dropdown">
+                    <!-- Links to other parts of the site -->
+                    <a href="moderator.html" title="Access the moderator review page">
+                        <img src="assets/moderator-icon.png" alt="Moderator icon">Moderator
+                    </a>
+                    <a href="reports.html" title="View management reports">
+                        <img src="assets/reports-icon.png" alt="Reports icon">Reports
+                    </a>
+                    <a href="contact.html" title="Contact customer support">
+                        <img src="assets/contact-icon.png" alt="Contact icon">Contact
+                    </a>
+                </div>
+            </details>
+        </nav>
+    </header>
+    <main>
+        <!-- Introduction section -->
+        <section style="text-align:center;padding:40px;">
+            <h1>Welcome to UniSkyLink</h1>
+            <p>One Simple Search, Key To The Sky!</p>
+        </section>
+        <!-- Row of circular buttons linking to city flight listings -->
+        <section class="bubbles">
+            <a href="flights-sydney.html" class="bubble" title="View flights departing from Sydney">Sydney</a>
+            <a href="flights-melbourne.html" class="bubble" title="View flights departing from Melbourne">Melbourne</a>
+            <a href="flights-brisbane.html" class="bubble" title="View flights departing from Brisbane">Brisbane</a>
+        </section>
+    </main>
+    <!-- Simple footer with copyright information -->
+    <footer style="text-align:center;padding:20px;background-color:#f5f5f5;margin-top:40px;">
+        <p>&copy; 2025 Nishan Chimariya. All rights reserved.</p>
+    </footer>
+
+    <!--  -->
+    <script src="assets/tooltip.js"></script>
+</body>
+</html>

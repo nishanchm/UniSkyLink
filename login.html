@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+  Login page: collects a user's email address and password.
+  If the form fields are empty when the user tries to submit
+  the form, a simple JavaScript function will display an alert.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniSkyLink – Login</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Header with logo and navigation menu -->
+    <header>
+        <div class="logo">
+            <!-- Branding link returns to the home page -->
+            <a href="index.html" title="Return to the home page">
+                <img src="assets/logo.png" alt="UniSkyLink company logo">
+                <span>UniSkyLink</span>
+            </a>
+        </div>
+        <nav>
+            <a href="login.html" class="btn" title="You are already on the login page">Login</a>
+            <details>
+                <summary title="Open navigation menu">Menu ☰</summary>
+                <div class="dropdown">
+                    <a href="moderator.html" title="Access the moderator review page">
+                        <img src="assets/moderator-icon.png" alt="Moderator icon">Moderator
+                    </a>
+                    <a href="reports.html" title="View management reports">
+                        <img src="assets/reports-icon.png" alt="Reports icon">Reports
+                    </a>
+                    <a href="contact.html" title="Contact customer support">
+                        <img src="assets/contact-icon.png" alt="Contact icon">Contact
+                    </a>
+                </div>
+            </details>
+        </nav>
+    </header>
+    <main>
+        <!-- Login form section -->
+        <section style="text-align:center;padding:30px;">
+            <h2>Login</h2>
+            <p>Please enter your email address and password to log in.</p>
+        </section>
+        <form onsubmit="return validateLogin()" action="login-success.html" method="post">
+            <!-- Email address input field -->
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" title="Enter your email address">
+            <!-- Password input field -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Your password" title="Enter your password">
+            <!-- Submit button -->
+            <input type="submit" value="Submit" title="Submit your login information">
+            <!-- Cancel button to return home -->
+            <button type="button" onclick="window.location.href='index.html'" title="Return to the home page without logging in">Cancel</button>
+        </form>
+    </main>
+    <footer style="text-align:center;padding:20px;background-color:#f5f5f5;margin-top:40px;">
+        <p>&copy; 2025 Nishan Chimariya. All rights reserved.</p>
+    </footer>
+
+    <!-- Tooltip script -->
+    <script src="assets/tooltip.js"></script>
+    <!-- Simple validation script -->
+    <script>
+    function validateLogin() {
+        var email = document.getElementById('email').value.trim();
+        var password = document.getElementById('password').value.trim();
+        if (email === '' || password === '') {
+            alert('Please enter information');
+            return false; // prevent form submission
+        }
+        return true; // allow form submission
+    }
+    </script>
+</body>
+</html>

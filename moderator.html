@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+  Moderator page: lists submitted advertisements for review.  Each
+  advertisement includes buttons to approve, reject or comment.
+  
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniSkyLink – Moderator</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Branding link returns to the home page -->
+            <a href="index.html" title="Return to the home page">
+                <img src="assets/logo.png" alt="UniSkyLink company logo">
+                <span>UniSkyLink</span>
+            </a>
+        </div>
+        <nav>
+            <a href="login.html" class="btn" title="Log into your account">Login</a>
+            <details>
+                <summary title="Open navigation menu">Menu ☰</summary>
+                <div class="dropdown">
+                    <a href="moderator.html" title="You are on the moderator page">
+                        <img src="assets/moderator-icon.png" alt="Moderator icon">Moderator
+                    </a>
+                    <a href="reports.html" title="View management reports">
+                        <img src="assets/reports-icon.png" alt="Reports icon">Reports
+                    </a>
+                    <a href="contact.html" title="Contact customer support">
+                        <img src="assets/contact-icon.png" alt="Contact icon">Contact
+                    </a>
+                </div>
+            </details>
+        </nav>
+    </header>
+    <main>
+        <section style="text-align:center;padding:30px;">
+            <h2>Moderator Review</h2>
+            <p>Below are advertisements awaiting your review. Use the buttons
+            underneath each image to approve, reject or leave a comment.</p>
+        </section>
+        <!-- Scrollable list of advertisements -->
+        <div class="ads-container">
+            <div class="ad-item" title="Advertisement 1">
+                <img src="assets/flight1.png" alt="Advertisement example image 1">
+                <div class="buttons">
+                    <button class="btn" onclick="window.location.href='moderator-approved.html'" title="Approve this advertisement">Approve</button>
+                    <button class="btn" onclick="window.location.href='moderator-rejected.html'" title="Reject this advertisement">Reject</button>
+                    <button class="btn" onclick="window.location.href='comment.html'" title="Add a comment to this advertisement">Comment</button>
+                </div>
+            </div>
+            
+            <div class="ad-item" title="Advertisement 2">
+                <img src="assets/flight2.png" alt="Advertisement example image 2">
+                <div class="buttons">
+                    <button class="btn" onclick="window.location.href='moderator-approved.html'" title="Approve this advertisement">Approve</button>
+                    <button class="btn" onclick="window.location.href='moderator-rejected.html'" title="Reject this advertisement">Reject</button>
+                    <button class="btn" onclick="window.location.href='comment.html'" title="Add a comment to this advertisement">Comment</button>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Back and home buttons -->
+        <div style="text-align:center;margin:20px;">
+            <button class="btn" type="button" onclick="history.back()" title="Go back to the previous page">Back</button>
+            <a href="index.html" class="btn" title="Return to the home page">Go Home</a>
+        </div>
+    </main>
+    <footer style="text-align:center;padding:20px;background-color:#f5f5f5;margin-top:40px;">
+        <p>&copy; 2025 Nishan Chimariya. All rights reserved.</p>
+    </footer>
+
+    <!-- Tooltip script -->
+    <script src="assets/tooltip.js"></script>
+</body>
+</html>

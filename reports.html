@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+  Reports overview page: lists all available reports that management
+  might generate.  Each tile links to a placeholder page representing
+  a particular report type.  Icons are reused here for simplicity.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniSkyLink – Reports</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Branding link returns to the home page -->
+            <a href="index.html" title="Return to the home page">
+                <img src="assets/logo.png" alt="UniSkyLink company logo">
+                <span>UniSkyLink</span>
+            </a>
+        </div>
+        <nav>
+            <a href="login.html" class="btn" title="Log into your account">Login</a>
+            <details>
+                <summary title="Open navigation menu">Menu ☰</summary>
+                <div class="dropdown">
+                    <a href="moderator.html" title="Access the moderator review page">
+                        <img src="assets/moderator-icon.png" alt="Moderator icon">Moderator
+                    </a>
+                    <a href="reports.html" title="You are currently on the reports page">
+                        <img src="assets/reports-icon.png" alt="Reports icon">Reports
+                    </a>
+                    <a href="contact.html" title="Contact customer support">
+                        <img src="assets/contact-icon.png" alt="Contact icon">Contact
+                    </a>
+                </div>
+            </details>
+        </nav>
+    </header>
+    <main>
+        <section style="text-align:center;padding:30px;">
+            <h2>Management Reports</h2>
+            <p>Select a report below to view a representation of its contents.  The images
+            shown are placeholders and illustrate where graphs or tables will appear.</p>
+        </section>
+        <!-- Report items list -->
+        <div class="report-list">
+            <div class="report-item" onclick="window.location.href='report-total-users.html'" title="Total number of users report">
+                <img src="assets/report-users.png" alt="Users report illustration">
+                <span>Total Users</span>
+            </div>
+            <div class="report-item" onclick="window.location.href='report-active-users.html'" title="Number of active users per month report">
+                <img src="assets/report-users.png" alt="Active users report illustration">
+                <span>Active Users</span>
+            </div>
+            <div class="report-item" onclick="window.location.href='report-new-users.html'" title="Number of new users per month report">
+                <img src="assets/report-users.png" alt="New users report illustration">
+                <span>New Users</span>
+            </div>
+            <div class="report-item" onclick="window.location.href='report-total-ads.html'" title="Total number of advertisements report">
+                <img src="assets/report-users.png" alt="Advertisements report illustration">
+                <span>Total Advertisements</span>
+            </div>
+            <div class="report-item" onclick="window.location.href='report-new-ads.html'" title="Number of new advertisements report">
+                <img src="assets/report-users.png" alt="New advertisements report illustration">
+                <span>New Advertisements</span>
+            </div>
+        </div>
+    </main>
+    <footer style="text-align:center;padding:20px;background-color:#f5f5f5;margin-top:40px;">
+        <p>&copy; 2025 Nishan Chimariya. All rights reserved.</p>
+    </footer>
+
+    <!-- Tooltip script -->
+    <script src="assets/tooltip.js"></script>
+</body>
+</html>
