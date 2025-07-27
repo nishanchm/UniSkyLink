@@ -1,0 +1,364 @@
+/* Global stylesheet defining basic colours, layout and components */
+
+/* Reset some default margins and choose a readable font */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+}
+
+/* Top navigation bar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0C2340; /* dark navy similar to the logo */
+    padding: 10px 20px;
+    color: #ffffff;
+}
+
+/* Container for the logo and company name */
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo image styling */
+header .logo img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Company name styling */
+header .logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Make logo and text clickable without underlining */
+header .logo a {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+header .logo a:hover {
+    text-decoration: none;
+}
+
+
+/* Container for navigation links and menu */
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for plain links and the summary element inside <details> */
+header nav a,
+header nav summary {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Underline links when hovered */
+header nav a:hover,
+header nav summary:hover {
+    text-decoration: underline;
+}
+
+/* The <details> element provides a built‑in expandable section for the menu */
+details {
+    position: relative;
+}
+
+/* Show the dropdown panel when <details> is open */
+details[open] > .dropdown {
+    display: block;
+}
+
+/* Dropdown panel container */
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #0C2340;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 10;
+    min-width: 220px;
+}
+
+/* Individual links inside the dropdown */
+.dropdown a {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    padding: 8px;
+    text-decoration: none;
+}
+
+/* Small icons next to the text in the dropdown */
+.dropdown a img {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Change background colour on hover within the dropdown */
+.dropdown a:hover {
+    background-color: #145DA0;
+}
+
+/* A basic button style reused throughout the site */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px 0;
+    background-color: #145DA0;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #1E3A5F;
+}
+
+/* Circular buttons on the home page used to select a city */
+.bubbles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.bubble {
+    background-color: #145DA0;
+    color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.5em;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.bubble:hover {
+    background-color: #1E3A5F;
+    transform: scale(1.05);
+}
+
+/* Generic card layout used for flight listings */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.card {
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 300px;
+    background-color: #ffffff;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card .info {
+    padding: 15px;
+}
+
+.card .info h3 {
+    margin-top: 0;
+}
+
+.card .info p {
+    margin: 5px 0;
+}
+
+/* Scrollable ads list */
+.ads-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 20px;
+    padding: 20px;
+    max-height: 500px; /* limit height so content becomes scrollable */
+}
+
+.ad-item {
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    width: 300px;
+    background-color: #ffffff;
+}
+
+.ad-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.ad-item .buttons {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ad-item .buttons button {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.ad-item .buttons button:last-child {
+    margin-right: 0;
+}
+
+/* Simple form styling used on login, comment and contact pages */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+form input[type="submit"],
+form button {
+    background-color: #145DA0;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+    background-color: #1E3A5F;
+}
+
+/* Layout for the report listing page */
+.report-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.report-list .report-item {
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    width: 220px;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.report-list .report-item:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+.report-list .report-item img {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+/* Responsive rules to ensure the layout adapts to narrow screens */
+@media (max-width: 600px) {
+    /* Stack the bubbles vertically on small devices */
+    .bubbles {
+        flex-direction: column;
+    }
+    .bubble {
+        width: 120px;
+        height: 120px;
+        font-size: 1.2em;
+    }
+    /* Stack cards and report items vertically */
+    .cards,
+    .report-list,
+    .ads-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Tooltip styling shown on hover using data-tooltip attributes */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.8em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0s ease-in-out;
+    z-index: 100;
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+}
